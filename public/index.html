@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html>
     <head>
-
+        <title>Amazing Chat App</title>
+        <link rel="icon" href="img/favicon.png">
+        <link rel="stylesheet" href="/css/styles.min.css">
     </head>
     <body>
-        Chat App
+        <div class="chat"> 
+            <div class="chat__sidebar">
 
-        <div id="messages"></div>
-
-        <form id="msgform">
-            <input name="message" placeholder="Message">
-            <button>Send</button>
-        </form>
-        <button id="sendLocation">Send Location</button>
-
+            </div>
+            <div class="chat__main">
+                    <div id="messages" class="chat__messages"></div>
+                    <div class="compose">
+                            <form id="msgform">
+                                    <input name="message" placeholder="Message">
+                                    <button>Send</button>
+                                </form>
+                                <button id="sendLocation">Send Location</button>
+                    </div>
+            </div>
+        </div>
         <script id="message-template" type="text/html">
-            <div>
+            <div class="message">
+                <p>
+                    <span class="message__name">Some user Name</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
                 <p>{{message}}</p>
             </div>
         </script>
         <script id="location-template" type="text/html">
-            <div>
-                <a href="{{url}}" target="_blank">My current Location</a>
+            <div class="message">
+                <p>
+                    <span class="message__name">Some user Name</span>
+                    <span class="message__meta">{{createdAt}}</span>
+                </p>
+                <p><a href="{{url}}" target="_blank">My current Location</a></p>
             </div>
         </script>
 
