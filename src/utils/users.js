@@ -9,7 +9,7 @@ const addUser = ({ id, username, room }) => {
 
 
         // Validate the data
-        if (!username || !room){
+        if (!username || !room) {
             return {
                 error: 'Username and room are required'
             }
@@ -17,13 +17,13 @@ const addUser = ({ id, username, room }) => {
 
         // Check for existing user
         const existingUser = users.find((user) => {
-            return user.room === room && user.username ===username
+            return user.room === room && user.username === username
         })
 
         // Validate username
         if (existingUser) {
             return {
-                error: 'Username already is in use'
+                error: 'Username in use'
             }
         }
 
@@ -40,7 +40,7 @@ const removeUser = (id) => {
         return user.id === id
     })
 
-    if (indexn!== -1) {
+    if (index!== -1) {
         return users.splice(index, 1)[0]
     }
 }
