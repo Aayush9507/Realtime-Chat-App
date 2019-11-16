@@ -1,0 +1,6 @@
+FROM node:1.0.0
+WORKDIR /chat-app
+ADD . /chat-app
+RUN npm install
+EXPOSE 3000
+CMD npm start
